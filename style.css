@@ -728,4 +728,879 @@ font-size:13px;
     height:100%;
     object-fit:contain;
     display:block;
+}/* ================= VENUE SECTION ================= */
+
+.venue{
+    padding:90px 8%;
+    background:transparent;
+    text-align:center;
+}
+
+.venue .section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    color:#8b6a3d;
+    margin-bottom:15px;
+}
+
+.venue-card{
+    max-width:1050px;
+    margin:40px auto;
+    background:rgba(255,250,245,.78);
+    border:1px solid rgba(193,158,88,.35);
+    border-radius:30px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:40px;
+    padding:45px;
+}
+
+@media(max-width:900px){
+
+.venue-card{
+grid-template-columns:1fr;
+}
+
+}
+
+.venue-info{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.venue-info h3{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+color:#3d2d1e;
+margin-bottom:15px;
+}
+
+.venue-address{
+
+font-size:22px;
+color:#b88a44;
+font-weight:600;
+margin-bottom:25px;
+
+}
+
+.venue-text{
+
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:35px;
+
+}
+
+.venue-buttons{
+
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.venue-btn{
+
+padding:16px 34px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+font-size:18px;
+
+background:linear-gradient(135deg,#d6af60,#b88a44);
+color:#fff;
+
+transition:.3s;
+
+}
+
+.venue-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.venue-btn.secondary{
+
+background:#fff8ef;
+border:2px solid #d6af60;
+color:#8b6a3d;
+
+}
+
+.map-container{
+
+border-radius:25px;
+overflow:hidden;
+border:2px solid rgba(212,180,110,.25);
+
+}
+
+.map-container iframe{
+
+width:100%;
+height:520px;
+border:0;
+border-radius:22px;
+
+}
+
+.venue-features{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:35px;
+
+}
+
+.feature{
+
+background:#fff8ef;
+border:1px solid rgba(212,180,110,.35);
+padding:16px 22px;
+border-radius:18px;
+font-size:16px;
+color:#7b5c34;
+
+}/* ================= BACK TO TOP ================= */
+
+#backToTop{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#D7B56D,#BE9346);
+    color:white;
+
+    font-size:24px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(190,147,70,.35);
+
+    display:block;
+
+    transition:.3s;
+
+    z-index:9999;
+}
+
+#backToTop:hover{
+    transform:translateY(-4px) scale(1.08);
+}
+
+/* ================= FLOATING FLOWERS ================= */
+
+#flower-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.flower{
+    position:fixed;
+    top:-60px;
+    left: 0;
+    font-size:28px;
+    pointer-events: none;
+    z-index: 9999;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+    transform:translateY(-80px) rotate(0deg);
+}
+
+100%{
+    transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+/*======================================
+BACKGROUND MUSIC BUTTON
+======================================*/
+
+#musicBtn{
+
+    position:fixed;
+
+    bottom:95px;
+
+    right:25px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#D4AF37,#E6C35C);
+
+    color:#fff;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.3s;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.08);
+
+}
+
+#musicBtn.playing{
+
+    animation:musicPulse 1.2s infinite;
+
+}
+
+@keyframes musicPulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/*=========================================
+WELCOME SCREEN
+=========================================*/
+
+#welcomeScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#fffaf4,#fdebd3);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .8s ease;
+
+}
+
+#welcomeScreen.hide{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.welcome-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    height:100vh;
+
+    text-align:center;
+
+    padding:20px 20px 10px;
+
+    gap:10px;
+
+    /* ==========================
+   Sanskrit Welcome
+========================== */
+
+.welcome-sloka{
+    margin-bottom:12px;
+    text-align:center;
+}
+
+.welcome-sloka h3{
+    font-size:28px;
+    color:#8b5e00;
+    margin-bottom:12px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.welcome-sloka p{
+    font-size:20px;
+    line-height:1.8;
+    color:#6d4c41;
+    font-weight:500;
+    margin:8px 0 4px;
+}
+
+/* =========================
+   Gold Divider
+========================= */
+
+.welcome-divider{
+    margin:0 0 2px;
+    text-align:center;
+    font-size:24px;
+    color:#c79b2b;
+    letter-spacing:8px;
+    text-shadow:0 0 10px rgba(199,155,43,.25);
+}
+
+.sloka-line{
+    width:140px;
+    height:2px;
+    margin:4px auto;
+    background:linear-gradient(to right,
+        transparent,
+        #d4af37,
+        transparent);
+}
+
+
+.welcome-flower{
+
+    font-size:60px;
+
+    animation:floatFlower 3s ease-in-out infinite;
+
+}
+
+.welcome-content h1{
+
+    font-size:48px;
+
+    margin:2px 0 8px;
+
+    color:#8B4513;
+
+}
+
+.welcome-content span{
+
+    color:#d4af37;
+
+}
+
+.welcome-content h2{
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size:48px;
+
+    font-weight:600;
+
+    color:#b8860b;
+
+    letter-spacing:1px;
+
+    margin:6px 0;
+
+    text-shadow:0 2px 8px rgba(184,134,11,.18);
+
+}
+
+.welcome-content p{
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:30px;
+
+    color:#5f4633;
+
+    line-height:1.5;
+
+    margin:0 0 18px;
+
+}
+
+#enterWedding{
+display: block;
+
+}
+
+@keyframes floatFlower{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==================================
+INVITATION CARD
+==================================*/
+
+.invite-card{
+
+    width:280px;
+
+    margin-bottom:60px;
+
+    background:#ffffff;
+
+    border:2px solid #d4af37;
+
+    border-radius:12px;
+
+    padding:20px 20px 25px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10),
+        0 0 20px rgba(212,175,55,0.20);
+
+}
+
+.invite-card:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.15),
+        0 0 35px rgba(212,175,55,0.30);
+
+}
+
+.invite-icon{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.invite-card h3{
+
+    margin:8px 0;
+
+    color:#8B4513;
+
+    letter-spacing:1px;
+
+    font-size:20px;
+
+}
+
+.invite-card p{
+
+    margin-top:8px;
+
+    color:#777;
+
+    font-size:12px;
+
+}
+
+/* ===========================
+   PREMIUM GOLD ENVELOPE
+=========================== */
+
+.envelope{
+    position:relative;
+    width:400px;
+    height:280px;
+    margin:20px auto 0;
+    cursor:pointer;
+    animation:envelopeFloat 5s ease-in-out infinite;
+    perspective:1200px;
+
+    transition: transform .8s ease,
+    filter .8s ease,
+    box-shadow .8ease;
+}
+
+.envelope-back{
+    position:absolute;
+    inset:0;
+    border-radius:14px;
+    background:
+        linear-gradient(135deg,#f8dc83,#e5b74a,#c99728);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.18),
+        inset 0 2px 0 rgba(255,255,255,.5);
+    overflow:visible;
+}
+
+.envelope-back::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 30% 20%,rgba(255,255,255,.35),transparent 40%),
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,.03) 0,
+            rgba(255,255,255,.03) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+}
+
+.envelope-flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:58%;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    background:
+        linear-gradient(to bottom,#f7d36d,#cf9627);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+    transform-origin:top;
+    transition:.8s;
+    z-index:15;
+}
+
+.envelope-letter{
+    position:absolute;
+    left:28px;
+    right:28px;
+    bottom:10px;
+    height:170px;
+    background:#fffdf8;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:30;
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.18);
+    transition:.8s;
+
+    overflow:visible;
+}
+
+.letter-border{
+    width:92%;
+    height:88%;
+    border:2px solid #e9cf93;
+    border-radius:12px;
+    background:
+        linear-gradient(to bottom,#fffefc,#fff8ef);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.letter-border::before,
+.letter-border::after{
+    content:"❦";
+    position:absolute;
+    color:#d4a437;
+    font-size:18px;
+}
+
+.letter-border::before{
+    top:8px;
+    left:12px;
+}
+
+.letter-border::after{
+    top:8px;
+    right:12px;
+}
+
+.om-symbol{
+    font-size:34px;
+    color:#b8860b;
+    margin-bottom:10px;
+}
+
+.letter-border h3{
+    margin:0;
+    font-size:34px;
+    color:#7b1d1d;
+    font-family:Georgia,serif;
+}
+
+.letter-border p{
+    margin-top:10px;
+    color:#b8860b;
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+.seal{
+    position:absolute;
+    left:50%;
+    top:52px;
+    transform:translateX(-50%);
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,#d92542,#8f0017);
+    border:4px solid #f6d57b;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.35),
+        inset 0 4px 8px rgba(255,255,255,.25);
+    z-index:30;
+}
+
+.envelope:hover .envelope-flap{
+    transform:rotateX(180deg);
+}
+
+.envelope:hover .envelope-letter{
+    transform:translateY(-65px);
+}
+
+@keyframes envelopeFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes envelopeFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ==========================
+   PREMIUM OPEN ANIMATION
+========================== */
+
+body.blur-bg #welcomeScreen{
+    backdrop-filter:blur(8px);
+    transition:backdrop-filter 1s ease;
+}
+
+/* Heart Seal Pop */
+
+.open .seal{
+    animation:sealPop .6s forwards;
+}
+
+@keyframes sealPop{
+
+    0%{
+        transform:translateX(-50%) scale(1);
+    }
+
+    40%{
+        transform:translateX(-50%) scale(1.35);
+    }
+
+    70%{
+        transform:translateX(-50%) scale(.9);
+    }
+
+    100%{
+        transform:translateX(-50%) scale(0);
+        opacity:0;
+    }
+
+}
+
+
+/* Envelope Flap */
+
+.open .envelope-flap{
+
+    transform:rotateX(-180deg);
+
+    transition:transform 1.1s ease;
+
+    transform-origin:top;
+
+}
+
+
+/* Letter Slides Up */
+
+.open .envelope-letter{
+
+    animation:letterUp 1.8s ease forwards;
+
+    animation-delay:.55s;
+
+    z-index:120;
+
+    filter:
+        drop-shadow(0 0 20px rgba(255,230,150,.7))
+        drop-shadow(0 0 45px rgba(255,210,90,.45));
+}
+
+@keyframes letterUp{
+
+0%{
+    transform:translateY(0) scale(1);
+}
+
+60%{
+    transform:translateY(-170px) scale(1.04);
+}
+
+100%{
+    transform:translateY(-160px) scale(1.03);
+}
+
+/* Envelope floats while opening */
+
+.open.envelope{
+
+    animation:none;
+    transform:translateY(-18px) scale(1.03);
+    filter:drop-shadow(0 28px 45px rgba (0,0,0,.28));
+
+}
+
+/* ==========================================
+   PREMIUM OPENING EFFECT
+========================================== */
+
+.sparkles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:99998;
+}
+
+.sparkle{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    opacity:0;
+    box-shadow:
+        0 0 10px white,
+        0 0 20px #ffeaa7,
+        0 0 30px white;
+    animation:sparkleAnimation 1.6s ease forwards;
+}
+
+@keyframes sparkleAnimation{
+
+0%{
+opacity:0;
+transform:scale(.2);
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:
+translateY(-120px)
+scale(2);
+}
+
+}
+
+.blur-opening{
+    animation:blurFade .9s ease;
+}
+
+@keyframes blurFade{
+
+0%{
+filter:blur(10px);
+transform:scale(1.02);
+}
+
+100%{
+filter:blur(0);
+transform:scale(1);
+}
+
 }
